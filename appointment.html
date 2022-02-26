@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		appointment form
+	</title>
+	<style>
+		header{
+			font-size: 40px;
+			font-style: Fjalla One;
+			text-align: center;
+			color: #476b6b;
+		}
+		table{
+			
+			max-width: 1000px;
+            margin: auto;
+            padding: 15px;
+            color:  white;
+		}
+		td{
+			border: 0px solid black;
+			padding: 10px;
+			margin: 90%;
+		}
+		.button
+		{
+			padding:0.9%;
+			cursor:pointer;
+			text-align:center;
+			background-color:#b3ccff;
+		}
+		.button:hover{
+			background-color:#ffcccc;
+		}
+		.colmn{
+			text-align:left;
+		}
+        body{
+        	font-size:x-large;
+        	text-align:center;
+
+        }
+        #td1{
+        	text-align: right;
+        	font-style:Sigmar One;
+
+        }
+	</style>
+	<script type="text/javascript">
+		function fun1(){  
+   document.getElementById("myForm").reset();  
+ }   
+		
+		function myfunction(x) 
+		{
+			x.style.background=" #ffffff";
+		}
+		function func()
+		{
+			var x=document.getElementById("fn");
+			x.value=x.value.toUpperCase();
+		}
+		function blur(){
+			var x=document.getElementById("ln");
+			x.value=x.value.toUpperCase();
+		}
+		
+		function validate()
+		 {
+		var fname= document.getElementById("fn").value;
+        var lname= document.getElementById("ln").value;
+        var email= document.getElementById("em").value;
+        var phnum=document.getElementById("ph").value;
+        var adrs=document.getElementById("ad").value;
+        var letters = /^[A-Za-z]+$/;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+         if(fname=='')
+         {
+         	alert('please enter your first name');
+         }
+         else if(!letters.test(fname))
+        {
+            alert('Name field required only alphabet characters');
+        }
+        else if(lname=='')
+        {
+            alert('Please enter the last name');
+        }
+        else if(!letters.test(lname))
+        {
+            alert('User name field required only alphabet characters');
+        }
+        else if(email=='')
+        {
+            alert('Please enter your email id');
+        }
+        else if (!filter.test(email))
+        {
+            alert('Invalid email');
+        }
+        else if(phnum=='')
+            {
+                alert('Please enter your phone number');
+            }
+        else if(adrs=='')
+        {
+        	alert('please enter address');
+        }
+			else{
+				alert('APPOINTMENT REGISTERED SUCCESSFULLY');
+			}
+		}
+	</script>
+</head>
+<body style="background-image:url('https://wallpaperaccess.com/full/624157.jpg');
+             background-size: 100% 130%" >
+  <header >
+		<u>APPOINTMENT FORM</u>
+	</header>
+	 <form id = "myForm" action = "#"  >
+	<table>
+		<tr>
+	<div >
+<td id="td1">Firstname:</td>
+<td>
+<input class="colmn" type="text" placeholder="first_name" name="name" id="fn" onfocus="myfunction(this)" onblur="func()"></td>
+</div>
+</tr>
+<tr>
+<div>
+<td id="td1">Lastname:</td>
+<td><input class="colmn" type="text" placeholder="last_name" name="name" id="ln" onfocus="myfunction(this)" onblur="blur()"></div></td>
+</tr>
+<tr>
+<div>
+<td id="td1">Gender:</td>
+<td>
+<input  class="colmn"type="radio" name="gender" value="male" required/>male
+<input type="radio" name="gender" value="female">female
+<input  type="radio" name="gender" value="others">others</td></div></tr>
+<tr>
+<div>
+<td id="td1">Age:</td>
+<td><input class="colmn"type="date" name="date" onfocus="myfunction(this)"></td></div></tr>
+<tr>
+<div>
+<td id="td1">Mode of appointment:</td>
+<td>
+<input class="colmn"type="radio" name="mode" value="online" id="online" required="required"/>
+<label for="online">Online</label>
+<input  type="radio" name="mode" value="offline" id="offline">
+<label for="offline">Offline</label></div></td></tr>
+<tr>
+<div>
+<td id="td1">Cheif complaint:</td>
+<td><input class="colmn"list="COMPLAINT" name="COMPLAINT" />
+<datalist id="COMPLAINT">
+<option value="covid consultancy">
+	<option value="General Medicine consultancy">
+		<option value="ENT consultancy"> 
+			<option value="ophthomology consultancy">
+			   <option value="DENTAL consultancy">
+			   	   <option value=" ORTHOPEDIC consultancy">
+				      <option value="PEDIATRIC consultancy">
+				      	<option value="GASTRONTRIC consultancy">
+				      		<option value="DERMOTOLOGY consultancy">
+				      			<option value="PULMANOLOGY consultancy">
+				      			   <option value="OTHERS"/>
+	
+</datalist>
+</select></td></div></tr>
+<tr>
+<div>
+<td id="td1" >Email Address:</td>
+<td><input class="colmn"type="email" name="email" placeholder="example@gmail.com" id="em" onfocus="myfunction(this)"/>
+</div></td></tr>
+<tr>
+<div>
+<td id="td1">Phone number:</td> 
+<td><input class="colmn"type="number" name="phno" id="ph" onfocus="myfunction(this)"></div></td></tr>
+<tr>
+<div>
+<td id="td1"><label for="address">Address:</label></td>
+<td><textarea class="colmn" name="address" rows="6" cols="25" id="ad"onfocus="myfunction(this)">
+</textarea></td></tr>
+</table>
+<input type="button" name="get appointment" value="Get appointment" class="button" id="btn" onclick="validate()" />
+<input type ="reset" class="button" value ="Reset data" onClick = "fun1()"/>  
+ </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<html>
+  <head>
+  <title>Login Form</title>
+  <style >
+        body{
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBgK5cH3qeoFP_q_T_HP9x9lUzqTR7A19A6A&usqp=CAU');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+             padding: 50px;
+            
+        }   
+        b{
+            padding: 35px;
+            font-size: 55px;
+            color: black
+        }
+      </style>
+        <script type="text/javascript">
+       function login()
+    {
+
+        var fname= document.getElementById("t1").value;
+        var pwd= document.getElementById("t5").value;           
+        
+        var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+        var letters = /^[A-Za-z]+$/;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        if(fname=='')
+        {
+            alert('Please enter your name');
+        }
+        else if(!letters.test(fname))
+        {
+            alert('Name field required only alphabet characters');
+        }   
+        else if(pwd=='')
+        {
+            alert('Please enter Password');
+        }
+       
+        else if(!pwd_expression.test(pwd))
+        {
+            alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+        }
+
+        else if(document.getElementById("t5").value.length < 6)
+        {
+            alert ('Password minimum length is 6');
+        }
+        else if(document.getElementById("t5").value.length > 12)
+        {
+            alert ('Password max length is 12');
+        }
+        else
+        {                                           
+               window.location.href="appointment.html"; 
+              
+               
+        }
+    }
+  </script>
+  </head>
+<body  >
+<form action="./init" method="post">
+    <div id="main">
+    <div >
+    <center>
+      <b >LOGIN ACCOUNT</b>
+    </center>    
+</div>
+    <div class="login">
+    <table cellspacing="2" align="center" cellpadding="8" border="1">
+    <tr>
+    <td align="right">Enter Name :</td>
+    <td><input type="text" placeholder="Enter Name here" id="t1" class="tb"  /></td>
+    </tr>
+    <tr>
+    <td align="right">Enter Password :</td>
+    <td><input type="password" placeholder="Enter Password here" id="t5" class="tb" /></td>
+    </tr>
+    <tr>
+    <td colspan="2" style="text-align:center"><input type="submit" value="login" class="btn"
+     onclick="login()" /></td>
+    </tr>
+    </table>
+    </div>
+    </div>
+</form>
+   </body>
+    </html>
+

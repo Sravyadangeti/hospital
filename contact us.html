@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+	contact us
+</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style >
+p{
+	font-size:80px;
+	display: inline;
+}
+pre{
+	font-size:30px;
+	display: inline;
+}
+input[type=text]{
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid black;
+}
+input[type=email]{
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.container{
+	border-style: solid;
+	margin-left: 35%;
+	margin-right: 35%;
+	padding: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+body{
+	padding: 15px;
+	background-image: url('https://wallpaperaccess.com/full/3124512.jpg');
+	background-repeat: none;
+	background-attachment: fixed;
+    background-size:cover;
+}
+#inline{
+	color:white;
+	font-family: Sans-serif,Helvetica;
+}
+h2{
+	font-family:Monospace,Lucida Console;
+}
+p{  
+	font-border: black;
+	background: -webkit-linear-gradient(#4682B4,#eee);
+	font-family: 'Nunito', sans-serif;
+	font-size: 72px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa {
+  padding: 4px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px 1px;
+}
+#fa{
+	display: inline-grid;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+  }
+  .fa-google {
+  background: #dd4b39;
+  color: white;
+}
+.fa-phone{
+color: white;
+}
+</style>
+<script type="text/javascript">
+	function submit()
+	{
+		var fname=document.getElementById("t1").value;
+		var enm=document.getElementById("t2").value;
+		var text=document.getElementById("t3").value;
+
+		var letters = /^[A-Za-z]+$/;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+     
+     if(fname=='')
+        {
+            alert('Please enter name');
+        }
+        else if(!letters.test(fname))
+        {
+            alert('Name field required only alphabet characters');
+        }
+       
+        else if(enm=='')
+        {
+            alert('Please enter your email id');
+        }
+        else if (!filter.test(enm))
+        {
+            alert('Invalid email');
+          }
+         else if(text=='')
+         {
+         	alert('please enter the message');
+         }   
+         else
+        {                                           
+               alert('Message sent successfully');  
+        }
+	}
+</script>
+</head>
+<body>
+	<p>Contact us</p>
+
+	<div class="container">
+   <h2>Enter Message</h2>
+	<input type="text" name="name" placeholder="Name" id="t1"/><br><br>
+	<input type="email" name="email" placeholder="Email" id="t2"/><br><br>
+	<input type="text" name="message"placeholder="Enter Message" id="t3"/><br><br>
+	<input type="submit" name="submit" onclick="submit()"/>
+</div>
+<div id="inline">
+<pre>
+
+GMR Nagar,Rajam, Srikakulam District,
+AndhraPradesh-532127
+<a href="" class="fa fa-phone" id="fa"></a>Ph:7032823181 to 84
+1800 425 1834
+contact-gmrcarehospitals.in
+<a href="mailto:gmrcarehospitals@gmail.com"style="color:#80e5b1 ;text-decoration:none;">Click here to SEND MAIL</a>
+</pre>
+Available on
+<a href="#" class="fa fa-facebook"id="fa"></a>
+<a href="#" class="fa fa-google"id="fa"></a>
+</div>
+</body>
+</html>
